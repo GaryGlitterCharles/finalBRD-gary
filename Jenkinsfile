@@ -1,12 +1,12 @@
-properties = null
+// properties = null
 
-def loadProperties() {
-    node {
-        checkout scm
-        properties = readProperties file: 'pipeline.properties'
-        echo "Immediate one ${properties.test}"
-    }
-}
+// def loadProperties() {
+//     node {
+//         checkout scm
+//         properties = readProperties file: 'pipeline.properties'
+//         echo "Immediate one ${properties.test}"
+//     }
+// }
 
 
 pipeline {
@@ -31,8 +31,9 @@ pipeline {
       stage('CheckOut') {
         steps{
            script{
-               loadProperties()
-               echo "Later one ${properties.test}"
+               
+              def props = readProperties  file: 'E:\\Jenkins\\pipeline.properties'
+              echo props
               if (TECH_STACK == 'JAVA'){
                  echo "JAVA --- daaaa"
               }
