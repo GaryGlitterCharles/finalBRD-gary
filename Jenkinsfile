@@ -32,8 +32,9 @@ pipeline {
         steps{
            script{
                
-              def props = readProperties  file: 'E:\\Jenkins\\pipeline.properties'
-              echo props
+              def props = readProperties  file: 'E:/Jenkins/pipeline.properties'
+              
+              
               if (TECH_STACK == 'JAVA'){
                  echo "JAVA --- daaaa"
               }
