@@ -2,7 +2,7 @@ pipeline {
    agent any
    
    environment {
-       TECH_STACK=""
+       TECH_STACK="DEFAULT"
    }
 
    stages {
