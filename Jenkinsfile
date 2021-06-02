@@ -3,7 +3,7 @@ properties = null
 def loadProperties() {
     node {
         checkout scm
-        properties = readProperties file: 'E:\\Jenkins\\pipeline.properties'
+        properties = readProperties file: 'pipeline.properties'
         echo "Immediate one ${properties.test}"
     }
 }
