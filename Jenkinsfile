@@ -1,3 +1,14 @@
+properties = null
+
+def loadProperties() {
+    node {
+        checkout scm
+        properties = readProperties file: 'E:\\Jenkins\\pipeline.properties'
+        echo "Immediate one ${properties.test}"
+    }
+}
+
+
 pipeline {
    agent any
    
@@ -6,7 +17,7 @@ pipeline {
    }
 
    stages {
-      stage('Tech') {
+      stage('Tech-Stack') {
          steps {
             script{
               
@@ -20,6 +31,8 @@ pipeline {
       stage('CheckOut') {
         steps{
            script{
+               loadProperties()
+               echo "Later one ${properties.test}"
               if (TECH_STACK == 'JAVA'){
                  echo "JAVA --- daaaa"
               }
