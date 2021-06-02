@@ -33,7 +33,8 @@ pipeline {
            script{
                
                def props = readFile 'C:\\Windows\\System32\\config\\systemprofile\\AppData\\Local\\Jenkins\\.jenkins\\workspace\\pipeline.properties'
-              
+              def Var1= props['test']
+              echo Var1
               
               if (TECH_STACK == 'JAVA'){
                  echo "JAVA --- daaaa"
