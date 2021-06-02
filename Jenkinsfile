@@ -2,19 +2,19 @@ pipeline {
    agent any
    
    environment {
-       TECH_STACK="DEFAULT"
+       TECH_STACK=""
    }
 
    stages {
       stage('Tech') {
          steps {
             script{
-              
-              test = input message: 'Please select the Tech Stack to proceed', ok: 'OK',parameters: [choice(name: 'RELEASE_SCOPE', choices: 'JAVA\nPL-SQL', description: '')]
+              // env.TECH_STACK=
+              TECH_STACK = input message: 'Please select the Tech Stack to proceed', ok: 'OK',parameters: [choice(name: 'RELEASE_SCOPE', choices: 'JAVA\nPL-SQL', description: '')]
                
             }
-            echo "${env.TECH_STACK}"
-            echo test
+            echo "${TECH_STACK}"
+            //echo = test
          }
       }
    }
