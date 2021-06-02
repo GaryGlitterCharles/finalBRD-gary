@@ -32,7 +32,7 @@ pipeline {
         steps{
            script{
                
-              def props = readProperties  file: 'E:/Jenkins/pipeline.properties'
+               def props = readJSON file: 'pipelineproperties.json'
               
               
               if (TECH_STACK == 'JAVA'){
