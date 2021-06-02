@@ -9,13 +9,25 @@ pipeline {
       stage('Tech') {
          steps {
             script{
-              // env.TECH_STACK=
-              TECH_STACK = input message: 'Please select the Tech Stack to proceed', ok: 'OK',parameters: [choice(name: 'RELEASE_SCOPE', choices: 'JAVA\nPL-SQL', description: '')]
+              
+              TECH_STACK = input message: 'Please select the Tech Stack to proceed', ok: 'OK',parameters: [choice(name: 'Java / PLSQL', choices: 'JAVA\nPL-SQL', description: '')]
                
             }
             echo "${TECH_STACK}"
-            //echo = test
+            
          }
+      }
+      stage('CheckOut') {
+        steps{
+           script{
+              if (TECH_STACK == 'JAVA'){
+                 echo "JAVA --- daaaa"
+              }
+              else if(TECH_STACK == 'PLSQL'){
+               echo "PLSQL da ------- "
+              }
+           }
+        }
       }
    }
 }
