@@ -32,7 +32,7 @@ pipeline {
         steps{
            script{
                
-               def props = readJSON file: 'pipelineproperties.json'
+               def props = readFile 'C:\\Windows\\System32\\config\\systemprofile\\AppData\\Local\\Jenkins\\.jenkins\\workspace\\pipeline.properties'
               
               
               if (TECH_STACK == 'JAVA'){
