@@ -32,7 +32,7 @@ pipeline {
         steps{
            script{
                
-               def props = readFile 'C:\\Windows\\System32\\config\\systemprofile\\AppData\\Local\\Jenkins\\.jenkins\\workspace\\pipeline.properties'
+              def props = readFile 'C:\\Windows\\System32\\config\\systemprofile\\AppData\\Local\\Jenkins\\.jenkins\\workspace\\pipeline.properties'
              
               echo props
               
@@ -46,5 +46,19 @@ pipeline {
            } 
         }
       }
+      stage('Build '){
+         steps{
+            script{
+               if (TECH_STACK == 'JAVA'){
+                 echo "JAVA --- Built"
+                 bat label:'', script : 'mvn clean install'
+              }
+              else if(TECH_STACK == 'PLSQL'){
+               echo "PLSQL da ------- "
+              }
+            }
+         }
+      }
+
    }
 }
