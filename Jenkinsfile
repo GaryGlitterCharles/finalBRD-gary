@@ -52,7 +52,9 @@ pipeline {
                if (TECH_STACK == 'JAVA'){
                  echo "JAVA --- Built"
                  bat '''set MAVEN_HOME=C:\\Users\\Gary\\Downloads\\apache-maven-3.8.1-bin\\apache-maven-3.8.1
+                     set JAVA_HOME=C:\\Program Files\\Java\\jdk1.8.0_291
                      set path=%MAVEN_HOME%\\bin;%PATH%
+                     set path=%JAVA_HOME%\\bin;%PATH%
                      mvn clean install'''
               }
               else if(TECH_STACK == 'PLSQL'){
