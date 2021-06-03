@@ -55,10 +55,11 @@ pipeline {
                      set JAVA_HOME=C:\\Program Files\\Java\\jdk1.8.0_291
                      set path=%MAVEN_HOME%\\bin;%PATH%
                      set path=%JAVA_HOME%\\bin;%PATH%
+                     mvn sonar:sonar
                      mvn clean install'''
               }
               else if(TECH_STACK == 'PLSQL'){
-               echo "PLSQL da ------- "
+               echo "No Build for PL-SQL "
               }
             }
          }
