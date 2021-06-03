@@ -38,7 +38,7 @@ pipeline {
               
               if (TECH_STACK == 'JAVA'){
                  echo "JAVA --- daaaa"
-                 checkout([$class: 'GitSCM', branches: [[name: '*/master']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/GaryGlitterCharles/SpringBoot-BRD.git']]])
+                 checkout([$class: 'GitSCM', branches: [[name: '*/master']], extensions: [], userRemoteConfigs: [[url: props]]])
               }
               else if(TECH_STACK == 'PLSQL'){
                echo "PLSQL da ------- "
