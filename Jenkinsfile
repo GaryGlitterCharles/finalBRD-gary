@@ -42,6 +42,8 @@ pipeline {
               }
               else if(TECH_STACK == 'PL-SQL'){
                echo "PLSQL da ------- "
+               checkout([$class: 'GitSCM', branches: [[name: '*/master']], extensions: [], userRemoteConfigs: [[url: props]]])
+
               }
            } 
         }
