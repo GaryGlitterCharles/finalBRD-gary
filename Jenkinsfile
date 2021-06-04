@@ -40,7 +40,7 @@ pipeline {
                  echo "JAVA --- daaaa"
                  checkout([$class: 'GitSCM', branches: [[name: '*/master']], extensions: [], userRemoteConfigs: [[url: props]]])
               }
-              else if(TECH_STACK == 'PLSQL'){
+              else if(TECH_STACK == 'PL-SQL'){
                echo "PLSQL da ------- "
               }
            } 
@@ -58,7 +58,7 @@ pipeline {
                      mvn sonar:sonar
                      mvn clean install'''
               }
-              else if(TECH_STACK == 'PLSQL'){
+              else if(TECH_STACK == 'PL-SQL'){
                echo "No Build for PL-SQL "
                echo  "${env.JOB_BASE_NAME}"
               }
