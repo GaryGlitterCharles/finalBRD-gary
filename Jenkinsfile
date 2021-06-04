@@ -60,6 +60,7 @@ pipeline {
               }
               else if(TECH_STACK == 'PLSQL'){
                echo "No Build for PL-SQL "
+               echo  "${env.JOB_BASE_NAME}"
               }
             }
          }
