@@ -16,6 +16,10 @@ pipeline {
        TECH_STACK=""
    }
 
+   options{
+      skipDefaultCheckout(true)
+   }
+
    stages {
       stage('Tech-Stack') {
          steps {
